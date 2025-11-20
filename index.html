@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucho's Construcción</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/image/logo.png" alt="Logo Lucho's Construcción">
+                <h1>Lucho's <span>"Construyendo tus sueños"</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#perfil" id="perfilLink" style="display: none;">Perfil</a></li>
+            </ul>
+            <div class="user-actions">
+                <button id="btnLogin" class="btn-login">Iniciar Sesión</button>
+                <button id="btnLogout" class="btn-logout" style="display: none;">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Transformamos tus sueños en realidad</h2>
+            <p>Especialistas en construcción residencial con más de 20 años de experiencia garantizando calidad y cumplimiento.</p>
+            <button class="btn-hero">Solicitar presupuesto</button>
+        </section>
+
+        <section id="nosotros" class="section">
+            <h3>Nosotros</h3>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Lucho's "construyendo tus sueños" es una empresa familiar con más de dos décadas de experiencia en el sector de construcción residencial. Nos especializamos en hacer realidad los proyectos de vivienda de nuestros clientes.</p>
+                    <p>Nuestro enfoque personalizado y atención al detalle nos distingue en cada proyecto que emprendemos.</p>
+                    <ul>
+                        <li>✅ Construcción de viviendas personalizadas</li>
+                        <li>✅ Remodelaciones y ampliaciones</li>
+                        <li>✅ Asesoría técnica y legal</li>
+                        <li>✅ Garantía de calidad y cumplimiento de plazos</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+               <img src="/image/primer.jpeg" alt="">
+               <img src="/image/segundo.jpg" alt="">
+               <img src="/image/tercero.jpg" alt="">
+               <img src="/image/cuarto.jpg" alt="">
+               <img src="/image/quinto.jpg" alt="">
+               <img src="/image/sexto.jpg" alt="">
+               
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="section">
+            <h3>Calculadora de Presupuesto</h3>
+            <div class="calculator-container">
+                <div class="calculator-card card">                    <h4>Calcula el costo de tu obra</h4>                    <form id="budgetForm" class="calculator-form">                        <div class="form-group">
+                            <label for="area">Área construida (m²)</label>
+                            <input type="number" id="area" min="10" max="1000" value="100" required>
+                            <div class="range-container">
+                                <input type="range" id="areaRange" min="10" max="1000" value="100" step="10">
+                                <span id="areaValue">100 m²</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipoConstruccion">Tipo de construcción</label>
+                            <select id="tipoConstruccion" required>
+                                <option value="1200">Económica (Bs 1,200/m²)</option>
+                                <option value="1800" selected>Estándar (Bs 1,800/m²)</option>
+                                <option value="2500">Premium (Bs 2,500/m²)</option>
+                                <option value="3500">Lujo (Bs 3,500/m²)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="numPisos">Número de pisos</label>
+                            <select id="numPisos">
+                                <option value="1">1 piso</option>
+                                <option value="1.1" selected>1 piso + plomeria</option>
+                                <option value="1.8">1 piso + plomeria + electricidad</option>
+                                <option value="2">2 pisos</option>
+                                <option value="2.8">2 pisos + plomeria</option>
+                                <option value="3">3 pisos</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="calidadAcabados">Calidad de acabados</label>
+                            <select id="calidadAcabados">
+                                <option value="0.8">Básica (-20%)</option>
+                                <option value="1" selected>Estándar</option>
+                                <option value="1.3">Alta (+30%)</option>
+                                <option value="1.6">Premium (+60%)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación de la obra</label>
+                            <select id="ubicacion">
+                                <option value="1" selected>Urbano</option>
+                                <option value="1.15">Semi-urbano (+15%)</option>
+                                <option value="1.25">Rural (+25%)</option>
+                                <option value="1.35">Zona difícil acceso (+35%)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="incluyeProyecto" checked>
+                                Incluir proyecto arquitectónico
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="incluyeLicencias" checked>
+                                Incluir trámites y licencias
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-calculate">Calcular Presupuesto</button>
+                    </form>
+                </div>
+                
+                <div class="results-card card">
+                    <h4>Resultado del cálculo</h4>
+                    <div id="resultadoPresupuesto" class="budget-result">
+                        <div class="result-item">
+                            <span class="result-label">Costo por m²:</span>
+                            <span class="result-value" id="costoM2">Bs0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Área total:</span>
+                            <span class="result-value" id="areaTotal">0 m²</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Costo construcción:</span>
+                            <span class="result-value" id="costoConstruccion">Bs0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Proyecto arquitectónico:</span>
+                            <span class="result-value" id="costoProyecto">Bs0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Trámites y licencias:</span>
+                            <span class="result-value" id="costoLicencias">Bs0</span>
+                        </div>
+                        <div class="result-item total">
+                            <span class="result-label">PRESUPUESTO TOTAL:</span>
+                            <span class="result-value" id="presupuestoTotal">Bs0</span>
+                        </div>
+                    </div>
+                    <div class="budget-actions">
+                       
+                        <button id="btnImprimirPresupuesto" class="btn btn-print">Generar presupuesto</button>
+                    </div>
+                    <div id="presupuestosGuardados" class="saved-budgets">
+                        <h5>Presupuestos guardados</h5>
+                        <div id="listaPresupuestos"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h3>Contacto</h3>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h4>¿Listo para construir tus sueños?</h4>
+                    <p><strong>Dirección:</strong> Senkata Av. periferica C.villcapujo</p>
+                    <p><strong>Teléfono:</strong>60100793-70132373 </p>
+                    <p><strong>Email:</strong> contacto@luchosconstruccion.com</p>
+                    <p><strong>Horario:</strong> Lunes a sabado 9:00 am - 9:00 pm</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">WhatsApp</a>
+                    </div>
+                </div>
+                <form id="contactForm" class="form-inline">
+                    <h4>Solicitar información</h4>
+                    <input type="text" id="contactName" placeholder="Nombre completo" required>
+                    <input type="email" id="contactEmail" placeholder="Correo electrónico" required>
+                    <input type="tel" id="contactPhone" placeholder="Teléfono" required>
+                    <select id="contactProjectType">
+                        <option value="">Tipo de proyecto</option>
+                        <option value="casa">Casa nueva</option>
+                        <option value="remodelacion">Remodelación</option>
+                        <option value="ampliacion">Ampliación</option>
+                        <option value="consultoria">Consultoría</option>
+                    </select>
+                    <textarea id="contactMsg" placeholder="Describe tu proyecto o consulta" required></textarea>
+                    <button class="btn" type="submit">Enviar solicitud</button>
+                    <p id="contactResp" class="msg"></p>
+                </form>
+            </div>
+        </section>
+
+        <section id="perfil" class="section">
+            <h3>Perfil</h3>  
+            <div id="profileInfo" class="card">Inicia sesión para ver tu perfil.</div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Lucho's "construyendo tus sueños" - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="main/main.js"></script>
+</body>
+</html>

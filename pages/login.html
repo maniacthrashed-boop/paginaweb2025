@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Construcción Civil</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <main class="centered-card">
+        <h1>Acceder</h1>
+        <form id="loginForm" class="form-card" novalidate>
+            <label>
+                Correo o usuario
+                <input type="text" id="loginUser" required />
+            </label>
+            <label>
+                Contraseña
+                <input type="password" id="loginPass" required minlength="6" />
+            </label>
+            <div class="row space-between">
+                <button type="submit" class="btn">Iniciar sesión</button>
+                <a href="register.html" class="link">Crear cuenta</a>
+            </div>
+            <p id="loginMsg" class="msg"></p>
+        </form>
+    </main>
+    <script src="../main/main.js"></script>
+</body>
+</html>

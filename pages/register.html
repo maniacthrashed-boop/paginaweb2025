@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Construcción Civil</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <main class="centered-card">
+        <h1>Registro de usuario</h1>
+        <form id="registerForm" class="form-card" novalidate>
+            <label>
+                Nombre completo
+                <input type="text" id="regName" required />
+            </label>
+            <label>
+                Correo electrónico
+                <input type="email" id="regEmail" required />
+            </label>
+            <label>
+                Contraseña
+                <input type="password" id="regPass" required minlength="6" />
+            </label>
+            <label>
+                Confirmar contraseña
+                <input type="password" id="regPass2" required minlength="6" />
+            </label>
+            <div class="row space-between">
+                <button type="submit" class="btn">Registrar</button>
+                <a href="login.html" class="link">Volver a iniciar sesión</a>
+            </div>
+            <p id="regMsg" class="msg"></p>
+        </form>
+    </main>
+    <script src="../main/main.js"></script>
+</body>
+</html>
