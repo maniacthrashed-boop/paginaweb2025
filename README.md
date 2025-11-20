@@ -1,2 +1,6 @@
 # paginaweb2025
 constructora luchos
+ALVARO RENE MAMANI TARQUI
+HTML
+CSS
+JAVASCRIPT
